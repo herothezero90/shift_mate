@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+@import "tailwindcss-animated";
+
+@plugin "daisyui" {
+  themes: all;
+}
