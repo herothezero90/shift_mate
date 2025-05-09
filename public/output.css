@@ -2529,6 +2529,12 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+  .overscroll-x-none {
+    overscroll-behavior-x: none;
+  }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }

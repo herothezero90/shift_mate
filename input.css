@@ -9,3 +9,11 @@ body {
   touch-action: pan-y;
   scroll-behavior: smooth;
 }
+
+@layer base {
+
+  html,
+  body {
+    @apply max-w-full overflow-x-hidden overscroll-x-none touch-pan-y;
+  }
+}
