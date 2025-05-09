@@ -234,6 +234,9 @@
 .max-w-\[200px\] {
   max-width: 200px;
 }
+.max-w-full {
+  max-width: 100%;
+}
 .max-w-none {
   max-width: none;
 }
@@ -390,6 +393,9 @@
 .bg-\[rgba\(173\,109\,244\,0\.5\)\] {
   background-color: rgba(173,109,244,0.5);
 }
+.bg-transparent {
+  background-color: transparent;
+}
 .bg-linear-to-tr {
   --tw-gradient-position: to top right;
   @supports (background-image: linear-gradient(in lab, red, red)) {
@@ -494,6 +500,9 @@
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
+.mask-repeat {
+  mask-repeat: repeat;
+}
 .object-contain {
   object-fit: contain;
 }
@@ -526,6 +535,9 @@
 }
 .uppercase {
   text-transform: uppercase;
+}
+.not-italic {
+  font-style: normal;
 }
 .underline {
   text-decoration-line: underline;
@@ -616,6 +628,13 @@
   &:hover {
     @media (hover: hover) {
       background-size: 400% 400%;
+    }
+  }
+}
+.hover\:underline {
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: underline;
     }
   }
 }
