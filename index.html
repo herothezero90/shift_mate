@@ -9,7 +9,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <meta name="theme-color" content="#A9AEFE" media="(prefers-color-scheme: light)">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="msapplication-navbutton-color" content="#A9AEFE">
 </head>
@@ -70,7 +70,7 @@
   </nav>
 
   <!-- hero cta section -->
-  <section class="relative overflow-hidden py-5">
+  <section class="relative overflow-hidden py-5 md:py-0">
     <!-- mobile only bg -->
     <img src="./public/images/mix.png" alt="hero image" aria-hidden="true" class="pointer-events-none absolute inset-y-0 left-1/3 w-full max-w-none
                 object-left opacity-50
@@ -83,7 +83,7 @@
                 max-w-screen-xl px-4 sm:px-6 lg:px-8 mx-auto">
       <!-- text -->
       <div
-        class="w-full md:w-1/3 text-left animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in mt-12 sm:mt-0">
+        class="w-full md:w-1/3 text-left animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in mt-20 sm:mt-0">
         <h1 class="font-bold text-base-content
                    text-5xl sm:text-6xl lg:text-7xl leading-tight">
           Manage <br> shifts <br> effortlessly <br>
@@ -296,10 +296,10 @@
           <div
             class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
             <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-              <p class="text-3xl font-semibold tracking-tight text-gray-950 max-lg:text-center">
+              <p class="text-3xl font-bold tracking-tight text-purple-500 max-lg:text-center">
                 Mobile-first design
               </p>
-              <p class="mt-4 text-base text-gray-600 max-lg:text-center">
+              <p class="mt-4 text-gray-600 max-lg:text-center text-sm md:text-lg">
                 Clock-in, swap shifts and chat with teammates on the go.
                 ShiftMate’s iOS & Android apps mirror the full web experience.
               </p>
@@ -319,10 +319,10 @@
           <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]
                    max-lg:rounded-t-[calc(2rem+1px)]">
             <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-              <p class="mt-2 text-3xl font-medium tracking-tight text-gray-950 max-lg:text-center">
+              <p class="mt-2 text-3xl font-bold tracking-tight text-purple-500 max-lg:text-center">
                 Built for Shift Teams
               </p>
-              <p class="mt-2 pb-5 max-w-lg text-md text-gray-600 max-lg:text-center">
+              <p class="mt-2 pb-5 max-w-lg text-sm md:text-lg text-gray-600 max-lg:text-center">
                 Four essentials every ShiftMate user loves.<br>
                 Everything in one app. On all platforms and devices.
               </p>
@@ -363,10 +363,10 @@
           <div
             class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
             <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-              <p class="text-3xl font-semibold tracking-tight text-gray-950 max-lg:text-center">
+              <p class="text-3xl font-bold tracking-tight text-purple-500 max-lg:text-center">
                 Smart task manager
               </p>
-              <p class="mt-4 text-base text-gray-600 max-lg:text-center">
+              <p class="mt-4 text-gray-600 max-lg:text-center text-sm md:text-lg">
                 Opening checklists, closing duties and safety checks —
                 assign, track and tick-off every task directly within the schedule.
               </p>
@@ -434,7 +434,7 @@
       </div>
     </div>
     <div class="mx-auto max-w-4xl text-center">
-      <h2 class="text-base/7 font-semibold text-indigo-600">Pricing</h2>
+      <h2 class="text-base/7 font-semibold text-purple-500">Pricing</h2>
       <p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">Choose the right
         plan
         for your team</p>
@@ -572,15 +572,15 @@
   <!-- faq -->
   <section id="faq" class="flow-root">
 
-    <div class="px-20">
-      <p class="mx-auto mt-2 mb-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-7xl"
+    <div class=" px-3 md:px-20">
+      <p class="mx-auto mt-2 mb-2 text-center text-5xl font-semibold tracking-tight text-balance text-gray-950 sm:text-7xl"
         data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="1800">
         FAQ
       </p>
       <!-- platforms -->
       <details class="group py-4 [&_summary::-webkit-details-marker]:hidden" open>
         <summary class="flex items-center justify-between gap-1.5 text-gray-900">
-          <h2 class="text-lg font-medium">Which devices and platforms does ShiftMate run on?</h2>
+          <h2 class="text-lg font-medium text-purple-500">Which devices and platforms does ShiftMate run on?</h2>
           <svg xmlns="http://www.w3.org/2000/svg" class="block size-5 shrink-0 group-open:hidden" fill="none"
             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -604,7 +604,7 @@
       <!--  scheduling -->
       <details class="group py-4 [&_summary::-webkit-details-marker]:hidden">
         <summary class="flex items-center justify-between gap-1.5 text-gray-900">
-          <h2 class="text-lg font-medium">How does the Smart Scheduling Engine build our rota?</h2>
+          <h2 class="text-lg font-medium text-purple-500">How does the Smart Scheduling Engine build our rota?</h2>
           <svg xmlns="http://www.w3.org/2000/svg" class="block size-5 shrink-0 group-open:hidden" fill="none"
             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -629,7 +629,7 @@
       <!-- shift swaps -->
       <details class="group py-4 [&_summary::-webkit-details-marker]:hidden">
         <summary class="flex items-center justify-between gap-1.5 text-gray-900">
-          <h2 class="text-lg font-medium">Can employees swap shifts without manager approval?</h2>
+          <h2 class="text-lg font-medium text-purple-500">Can employees swap shifts without manager approval?</h2>
           <svg xmlns="http://www.w3.org/2000/svg" class="block size-5 shrink-0 group-open:hidden" fill="none"
             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -653,7 +653,8 @@
       <!-- chat -->
       <details class="group py-4 [&_summary::-webkit-details-marker]:hidden">
         <summary class="flex items-center justify-between gap-1.5 text-gray-900">
-          <h2 class="text-lg font-medium">Is the internal chat secure enough to replace WhatsApp groups?</h2>
+          <h2 class="text-lg font-medium text-purple-500">Is the internal chat secure enough to replace WhatsApp groups?
+          </h2>
           <svg xmlns="http://www.w3.org/2000/svg" class="block size-5 shrink-0 group-open:hidden" fill="none"
             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -677,7 +678,7 @@
       <!-- integrations -->
       <details class="group py-4 [&_summary::-webkit-details-marker]:hidden">
         <summary class="flex items-center justify-between gap-1.5 text-gray-900">
-          <h2 class="text-lg font-medium">Does ShiftMate integrate with my payroll or POS system?</h2>
+          <h2 class="text-lg font-medium text-purple-500">Does ShiftMate integrate with my payroll or POS system?</h2>
           <svg xmlns="http://www.w3.org/2000/svg" class="block size-5 shrink-0 group-open:hidden" fill="none"
             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round"
@@ -700,7 +701,7 @@
       <!-- pricing -->
       <details class="group py-4 [&_summary::-webkit-details-marker]:hidden">
         <summary class="flex items-center justify-between gap-1.5 text-gray-900">
-          <h2 class="text-lg font-medium">What if my team grows beyond our current plan’s limits?</h2>
+          <h2 class="text-lg font-medium text-purple-500">What if my team grows beyond our current plan’s limits?</h2>
           <svg xmlns="http://www.w3.org/2000/svg" class="block size-5 shrink-0 group-open:hidden" fill="none"
             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round"
