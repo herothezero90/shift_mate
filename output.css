@@ -162,6 +162,9 @@
 .h-\[500px\] {
   height: 500px;
 }
+.h-\[600px\] {
+  height: 600px;
+}
 .h-\[900px\] {
   height: 900px;
 }
@@ -312,11 +315,20 @@
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
 .flex-col {
   flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
 }
 .flex-wrap {
   flex-wrap: wrap;
