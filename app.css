@@ -6,3 +6,28 @@
 @plugin "daisyui" {
   themes: all;
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+html {
+  scroll-padding-top: 4rem;
+}
+
+#site-header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#mobile-menu {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
