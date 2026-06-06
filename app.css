@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 @import "tailwindcss";
@@ -7,6 +8,21 @@
   themes: all;
 }
 
+@theme {
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
 html,
 body {
   max-width: 100%;
@@ -14,20 +30,346 @@ body {
 }
 
 html {
-  scroll-padding-top: 4rem;
+  scroll-padding-top: 5.5rem;
 }
 
-#site-header {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  z-index: 100;
+/* Hero block: white base with static glow on ::before/::after layers. */
+.hero-bg {
+  background-color: #ffffff;
+  isolation: isolate;
 }
 
-#mobile-menu {
-  position: fixed;
-  top: 4rem;
-  left: 0;
-  right: 0;
-  z-index: 99;
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 1;
+  background-image:
+    radial-gradient(58% 70% at 0% 100%, rgba(103, 232, 249, 0.55) 0%, rgba(103, 232, 249, 0.28) 42%, rgba(103, 232, 249, 0) 74%),
+    radial-gradient(58% 70% at 100% 100%, rgba(192, 132, 252, 0.68) 0%, rgba(168, 85, 247, 0.4) 40%, rgba(168, 85, 247, 0) 74%),
+    radial-gradient(72% 58% at 50% 78%, rgba(124, 58, 237, 0.62) 0%, rgba(139, 92, 246, 0.46) 38%, rgba(167, 139, 250, 0.22) 62%, rgba(139, 92, 246, 0) 82%),
+    radial-gradient(50% 42% at 12% 55%, rgba(103, 232, 249, 0.32) 0%, rgba(103, 232, 249, 0) 68%),
+    radial-gradient(50% 42% at 88% 52%, rgba(168, 85, 247, 0.48) 0%, rgba(168, 85, 247, 0) 68%);
+  background-repeat: no-repeat;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.75;
+  background-image:
+    radial-gradient(52% 62% at 18% 88%, rgba(103, 232, 249, 0.34) 0%, rgba(103, 232, 249, 0) 72%),
+    radial-gradient(52% 62% at 82% 88%, rgba(192, 132, 252, 0.44) 0%, rgba(192, 132, 252, 0) 72%),
+    radial-gradient(78% 55% at 50% 85%, rgba(109, 40, 217, 0.5) 0%, rgba(139, 92, 246, 0.32) 50%, rgba(139, 92, 246, 0) 78%);
+  background-repeat: no-repeat;
+}
+
+.hero-frame {
+  position: relative;
+}
+
+.feature-badge {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.feature-badge__number {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.75rem;
+  z-index: 1;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #ffffff;
+}
+
+/* Two-tone surface fills only — no outer glow */
+.feature-badge--cyan {
+  background-image: linear-gradient(135deg, #67e8f9 0%, #a78bfa 100%);
+}
+
+.feature-badge--violet {
+  background-image: linear-gradient(135deg, #c4b5fd 0%, #7c3aed 100%);
+}
+
+.feature-badge--pink {
+  background-image: linear-gradient(135deg, #f9a8d4 0%, #a855f7 100%);
+}
+
+.feature-badge--purple {
+  background-image: linear-gradient(135deg, #a855f7 0%, #6d28d9 100%);
+}
+
+.bento-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.bento-icon svg {
+  width: 1.625rem;
+  height: 1.625rem;
+}
+
+.bento-icon--cyan {
+  background-image: linear-gradient(135deg, #67e8f9 0%, #8b5cf6 100%);
+}
+
+.bento-icon--violet {
+  background-image: linear-gradient(135deg, #c4b5fd 0%, #7c3aed 100%);
+}
+
+.bento-icon--pink {
+  background-image: linear-gradient(135deg, #f9a8d4 0%, #a855f7 100%);
+}
+
+.bento-icon--purple {
+  background-image: linear-gradient(135deg, #a855f7 0%, #6d28d9 100%);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgb(51 65 85);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile: Wrangle-like hero — larger type, wide image, bottom clipped by viewport */
+@media (max-width: 767px) {
+  .hero-bg {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: 0;
+    min-height: calc(100dvh - 5rem);
+  }
+
+  .hero-bg::before {
+    border-radius: 0;
+  }
+
+  .hero-copy {
+    flex-shrink: 0;
+    margin-top: clamp(1.25rem, 8dvh, 6.5rem);
+    margin-bottom: clamp(1rem, 2.5dvh, 1.5rem);
+  }
+
+  .hero-title,
+  .section-title {
+    font-size: clamp(1.875rem, 7.5vw + 0.25rem, 2.5rem);
+    line-height: 1.1;
+  }
+
+  .hero-lead {
+    font-size: clamp(0.9375rem, 3.6vw + 0.1rem, 1.0625rem);
+    line-height: 1.5;
+    margin-top: clamp(0.75rem, 2.5vw, 1rem);
+  }
+
+  .hero-actions {
+    margin-top: clamp(1.25rem, 4vw, 1.5rem);
+    gap: clamp(0.75rem, 2.5vw, 1rem);
+  }
+
+  .hero-visual {
+    flex-shrink: 0;
+    margin-top: auto;
+    align-self: stretch;
+  }
+
+  .hero-frame {
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .hero-frame-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 767px) and (min-height: 800px) {
+  .hero-copy {
+    margin-top: clamp(2rem, 10dvh, 7rem);
+  }
+
+  .hero-title,
+  .section-title {
+    font-size: clamp(2.25rem, 4.5dvh + 0.75rem, 3.125rem);
+  }
+
+  .hero-lead {
+    font-size: clamp(1rem, 1.5dvh + 0.65rem, 1.1875rem);
+    margin-top: clamp(0.875rem, 2dvh, 1.25rem);
+  }
+
+  .hero-actions {
+    margin-top: clamp(1.5rem, 3dvh, 2rem);
+  }
+}
+
+/* iPad: shorter hero so the first card row peeks below the glow panel */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-bg {
+    display: flex;
+    flex-direction: column;
+    min-height: min(42rem, calc(100dvh - 12rem));
+    padding-top: 3.5rem;
+    padding-bottom: 0;
+  }
+
+  .hero-copy {
+    margin-top: 1rem;
+  }
+
+  .hero-title {
+    margin-bottom: 0.25rem;
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .hero-lead {
+    margin-top: 1.25rem;
+  }
+
+  .hero-visual {
+    margin-top: auto;
+    padding-top: 2.5rem;
+  }
+
+  .hero-frame {
+    max-height: clamp(18rem, 34vh, 24rem);
+  }
+
+  #about {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  #about h2 {
+    padding-bottom: 1.5rem;
+  }
+
+  #about .grid {
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+  }
+
+  #about p.text-3xl {
+    font-size: 1.35rem;
+    line-height: 1.15;
+  }
+
+  #about p.text-gray-600 {
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  #about .min-h-\[30rem\] {
+    min-height: 20rem;
+  }
+
+  #about .bento-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.875rem;
+  }
+
+  #about .bento-icon svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+}
+
+/* Desktop: crop dashboard to top segment only — flat bottom edge like Wrangle */
+@media (min-width: 1024px) {
+  .hero-bg {
+    padding-top: 4.5rem;
+  }
+
+  .hero-copy {
+    max-width: 58rem;
+  }
+
+  .hero-title,
+  .section-title {
+    font-size: clamp(3.75rem, 5vw, 4.75rem);
+    line-height: 1.02;
+  }
+
+  .hero-lead {
+    max-width: 48rem;
+    font-size: 1.125rem;
+    line-height: 1.55;
+    margin-top: 1rem;
+  }
+
+  .hero-actions {
+    margin-top: 2rem;
+  }
+
+  .hero-visual {
+    max-width: 68rem;
+    margin-top: 3rem;
+  }
+
+  .hero-frame {
+    max-height: 22rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-bg {
+    padding-top: 5rem;
+  }
+
+  .hero-visual {
+    max-width: 74rem;
+  }
+
+  .hero-frame {
+    max-height: 24rem;
+  }
 }

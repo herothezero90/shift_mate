@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>ShiftMate</title>
   <link rel="icon" type="image/png" href="./public/images/time_management.svg">
-  <link href="./public/output.css" rel="stylesheet" />
+  <link href="./public/output.css?v=4" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <meta name="theme-color" content="#A9AEFE" media="(prefers-color-scheme: light)">
@@ -17,116 +17,124 @@
 
 <body data-theme="cmyk">
 
-  <!-- bacground gradient -->
-  <div class="pointer-events-none fixed inset-x-0 top-0  
-  w-full h-[800px] md:h-[1500px]           
-  bg-[radial-gradient(100%_50%_at_50%_0%,rgba(92,101,255,.65)_0,transparent_60%)]
-  bg-top bg-no-repeat">
-  </div>
-
-  <!-- navigation -->
-  <nav id="site-header" class="sticky top-0 z-[100] w-full bg-white shadow-sm border-b border-gray-100 text-purple-500">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between gap-3">
-        <!--logo -->
-        <a href="#" class="flex shrink-0 items-center">
-          <img src="./public/images/time_management.svg" alt="ShiftMate logo" class="h-8 w-auto">
-        </a>
-        <!-- desktop tabblet links -->
-        <div class="hidden lg:flex flex-1 justify-center space-x-4">
-          <a href="#features" class="rounded-md bg-purple-500 px-3 py-2 text-sm font-medium text-white">Features</a>
-          <a href="#about"
-            class="rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-400 hover:text-white">About</a>
-          <a href="#pricing"
-            class="rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-400 hover:text-white">Pricing</a>
-          <a href="#faq" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-400 hover:text-white">FAQ</a>
-          <a href="#contact"
-            class="rounded-md px-3 py-2 text-sm font-medium hover:bg-purple-400 hover:text-white">Contact</a>
+  <!-- navigation wrapper (sticky, floating) -->
+  <div class="sticky top-4 z-[100] px-4 md:px-6 lg:px-8">
+    <nav id="site-header"
+      class="relative mx-auto w-full max-w-5xl lg:max-w-7xl rounded-2xl bg-white/75 backdrop-blur-md shadow-sm border border-white/40">
+      <!-- header row -->
+      <div class="px-4 lg:px-6">
+        <div class="flex h-14 items-center justify-between">
+          <!-- logo + name -->
+          <a href="#" class="flex shrink-0 items-center gap-2.5">
+            <img src="./public/images/time_management.svg" alt="ShiftMate logo" class="h-7 w-auto">
+            <span class="font-semibold text-gray-900 text-sm">ShiftMate</span>
+          </a>
+          <!-- desktop links -->
+          <div class="hidden lg:flex items-center space-x-1">
+            <a href="#features"
+              class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">Features</a>
+            <a href="#about"
+              class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">About</a>
+            <a href="#pricing"
+              class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">Pricing</a>
+            <a href="#faq"
+              class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">FAQ</a>
+            <a href="#contact"
+              class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">Contact</a>
+          </div>
+          <!-- hamburger mobile -->
+          <button id="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
+            aria-label="Open menu"
+            class="block lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+            <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="block h-5 w-5" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
-        <!-- hamburger mobile -->
-        <button id="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
-          aria-label="Open menu"
-          class="block lg:hidden ml-auto p-2 rounded-md bg-purple-600 text-white shadow hover:bg-purple-700">
-          <!-- hamburger icon -->
-          <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="block h-6 w-6" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <!-- close icon -->
-          <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
       </div>
-    </div>
-  </nav>
-
-  <!-- Mobile menu panel (fixed overlay below header) -->
-  <div id="mobile-menu"
-    class="fixed inset-x-0 z-[99] hidden border-b border-gray-200 bg-white px-4 pt-4 pb-6 shadow-lg lg:hidden">
-    <a href="#features" class="block rounded-md px-3 py-2 font-medium text-gray-900 hover:bg-purple-100">Features</a>
-    <a href="#about" class="block rounded-md px-3 py-2 font-medium text-gray-900 hover:bg-purple-100">About</a>
-    <a href="#pricing" class="block rounded-md px-3 py-2 font-medium text-gray-900 hover:bg-purple-100">Pricing</a>
-    <a href="#faq" class="block rounded-md px-3 py-2 font-medium text-gray-900 hover:bg-purple-100">FAQ</a>
-    <a href="#contact" class="block rounded-md px-3 py-2 font-medium text-gray-900 hover:bg-purple-100">Contact</a>
+      <!-- mobile menu overlay (floats over page content) -->
+      <div id="mobile-menu"
+        class="hidden absolute left-0 right-0 top-full z-10 rounded-b-2xl border-x border-b border-white/40 bg-white/75 px-4 py-3 shadow-lg backdrop-blur-md lg:hidden">
+        <a href="#features"
+          class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">Features</a>
+        <a href="#about"
+          class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">About</a>
+        <a href="#pricing"
+          class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">Pricing</a>
+        <a href="#faq"
+          class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">FAQ</a>
+        <a href="#contact"
+          class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">Contact</a>
+      </div>
+    </nav>
   </div>
 
   <!-- hero cta section -->
-  <section class="relative overflow-hidden py-5 md:py-20 lg:py-0">
-    <!-- mobile only bg -->
-    <img src="./public/images/mix.png" alt="hero image" aria-hidden="true" class="pointer-events-none absolute inset-y-0 left-1/3 w-full max-w-none
-                object-left opacity-50
-                md:w-3/4 md:scale-80
-                lg:hidden md:animate-fade md:animate-once md:animate-duration-2000 md:animate-ease-in" />
-    <!-- flex wrap -->
-    <div class="relative z-10
-                flex flex-col md:flex-row items-start md:items-center
-                justify-between
-                gap-12 sm:gap-16 lg:gap-20
-                max-w-screen-xl px-4 sm:px-6 lg:px-8 mx-auto">
-      <!-- text -->
-      <div
-        class="w-full md:w-1/3 text-left animate-fade-down animate-once animate-duration-[2000ms] animate-ease-in mt-0 sm:mt-0">
-        <h1 class="font-bold text-base-content
-                   text-5xl sm:text-6xl lg:text-7xl leading-tight">
-          Manage <br> shifts <br> effortlessly <br>
-          <strong class="text-purple-500">ShiftMate</strong>
+  <section class="relative px-0 md:px-6 lg:px-8 pt-0 md:pt-6 md:pb-6 lg:pt-10 lg:pb-0">
+
+    <!-- mobile + ipad: full viewport; desktop: contained rounded card -->
+    <div class="hero-bg relative mx-auto w-full max-w-7xl overflow-hidden
+                rounded-none md:rounded-[2rem]
+                px-4 md:px-8 lg:px-12 md:pt-14 pb-0 md:pb-8 lg:pb-0
+                flex flex-col min-h-[calc(100dvh-5rem)]
+                md:min-h-[calc(100dvh-5rem-3rem)] lg:min-h-0 lg:block">
+
+      <!-- text + CTAs -->
+      <div class="hero-copy relative z-10 mx-auto w-full max-w-3xl text-center
+                  animate-fade-down animate-once animate-duration-[1500ms] animate-ease-in">
+        <h1 class="hero-title mx-auto max-w-4xl font-bold text-base-content lg:leading-[1.1]">
+          Your team.<br>
+          <span class="text-purple-500">Perfectly scheduled.</span>
         </h1>
-        <div class="mt-6 flex gap-4">
-          <a class="btn bg-purple-500 text-white border-purple-500
-                     hover:bg-primary-focus hover:border-primary-focus" href="#">Get&nbsp;Started</a>
-          <a class="btn border border-base-300 text-base-content bg-base-100
-                     hover:bg-base-200" href="#">Learn&nbsp;More</a>
+        <p class="hero-lead mx-auto max-w-2xl text-zinc-600 md:text-lg lg:text-base">
+          From hospital wards and busy cafés to retail floors and event crews,
+          <strong class="text-purple-500">ShiftMate</strong> adapts to your roles, rules and daily workflows.
+        </p>
+        <div class="hero-actions flex justify-center md:mt-6">
+          <a href="#demo" class="hero-cta">
+            Request a demo
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
         </div>
       </div>
-      <!-- image for lg -->
-      <div
-        class="hidden lg:flex w-full lg:w-2/3 justify-end animate-fade animate-once animate-duration-2000 animate-ease-in">
-        <img src="./public/images/mix.png" alt="Time-management illustration"
-          class="w-[420px] sm:w-[520px] md:w-[650px] lg:w-[800px] xl:w-[950px]" />
-      </div>
 
+      <!-- dashboard image: pinned to bottom on mobile/ipad, cropped on desktop -->
+      <div class="hero-visual relative z-10 mt-auto lg:mt-8 mx-auto w-full max-w-5xl
+                  max-md:-mx-4 max-md:w-[calc(100%+2rem)]
+                  animate-fade-up animate-once animate-duration-[2000ms] animate-ease-in">
+        <div class="hero-frame overflow-hidden rounded-t-2xl ring-1 ring-black/5 shadow-2xl bg-white">
+          <img src="./public/images/hero_dashboard.png" alt="ShiftMate dashboard preview"
+            class="hero-frame-img block w-full h-auto" />
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- card grid -->
-  <section id="features" class="py-0" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+  <!-- card grid: below fold on mobile/ipad; peek on desktop -->
+  <section id="features" class="relative z-20 px-4 md:px-6 lg:px-8 pt-8 pb-12 md:pt-10 lg:pt-28 lg:pb-16">
     <div
-      class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 mt-20 px-4 py-2 max-w-screen-xl mx-auto">
+      class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 py-2 max-w-7xl mx-auto w-full">
       <!-- Card 1 -->
       <div
         class="w-full bg-white shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden rounded-2xl"
         data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
-        <div class=" w-24 h-24 bg-blue-500 rounded-full absolute -right-5 -top-7">
-          <p class="absolute bottom-6 left-7 text-white text-2xl">01</p>
+        <div class="feature-badge feature-badge--cyan absolute -right-5 -top-7">
+          <p class="feature-badge__number">01</p>
         </div>
-        <div class="fill-blue-500 w-12">
-          <i class="fas fa-calendar-alt text-3xl text-blue-500"></i>
+        <div class="fill-purple-500 w-12">
+          <i class="fas fa-calendar-alt text-3xl text-purple-500"></i>
         </div>
         <h1 class="font-bold text-xl">Smarter Schedules</h1>
         <p class="text-sm text-zinc-500 leading-6">
-          Weekly calendar views that adapt to rotating shifts.
+          Build rotas around demand, qualifications and team availability.
         </p>
       </div>
 
@@ -135,15 +143,15 @@
       <div
         class="w-full bg-white shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden rounded-2xl"
         data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
-        <div class="w-24 h-24 bg-green-500 rounded-full absolute -right-5 -top-7">
-          <p class="absolute bottom-6 left-7 t text-white text-2xl">02</p>
+        <div class="feature-badge feature-badge--violet absolute -right-5 -top-7">
+          <p class="feature-badge__number">02</p>
         </div>
-        <div class="fill-green-500 w-12">
-          <i class="fas fa-exchange-alt text-3xl text-green-500"></i>
+        <div class="fill-purple-500 w-12">
+          <i class="fas fa-exchange-alt text-3xl text-purple-500"></i>
         </div>
-        <h1 class="font-bold text-xl">Easy Shift Swaps</h1>
+        <h1 class="font-bold text-xl">Fast Shift Swaps</h1>
         <p class="text-sm text-zinc-500 leading-6">
-          Swap shifts without confusion—no group chats needed.
+          Let qualified teammates exchange shifts without long message threads.
         </p>
       </div>
 
@@ -151,15 +159,15 @@
       <div
         class="w-full bg-white shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden rounded-2xl"
         data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
-        <div class="w-24 h-24 bg-yellow-500 rounded-full absolute -right-5 -top-7">
-          <p class="absolute bottom-6 left-7  text-white text-2xl">03</p>
+        <div class="feature-badge feature-badge--pink absolute -right-5 -top-7">
+          <p class="feature-badge__number">03</p>
         </div>
-        <div class="fill-yellow-500 w-12">
-          <i class="fas fa-clock text-3xl  text-yellow-500"></i>
+        <div class="fill-purple-500 w-12">
+          <i class="fas fa-clock text-3xl text-purple-500"></i>
         </div>
-        <h1 class="font-bold text-xl">Real-Time Availability</h1>
+        <h1 class="font-bold text-xl">Live Availability</h1>
         <p class="text-sm text-zinc-500 leading-6">
-          Submit availability fast. Managers stay up-to-date.
+          Keep managers updated as availability and staffing needs change.
         </p>
       </div>
 
@@ -167,15 +175,15 @@
       <div
         class="w-full bg-white shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden rounded-2xl"
         data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
-        <div class="w-24 h-24 bg-purple-500 rounded-full absolute -right-5 -top-7">
-          <p class="absolute bottom-6 left-7 text-white text-2xl">04</p>
+        <div class="feature-badge feature-badge--purple absolute -right-5 -top-7">
+          <p class="feature-badge__number">04</p>
         </div>
         <div class="fill-purple-500 w-12">
           <i class="fas fa-user-tag text-3xl  text-purple-500"></i>
         </div>
-        <h1 class="font-bold text-xl">Built for Roles</h1>
+        <h1 class="font-bold text-xl">Custom Workflows</h1>
         <p class="text-sm text-zinc-500 leading-6">
-          Assign shifts by role—waiter, barista, nurse, or more.
+          Shape roles, permissions and tasks around your organisation.
         </p>
       </div>
     </div>
@@ -192,80 +200,75 @@
   background-position:0 0,10px 10px;
 ">
     <div class="mx-auto max-w-2xl text-center">
-      <h2 class="mb-5 pb-10 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl"
-        data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="1800">Features</h2>
+      <h2 id="features-tabs-title"
+        class="section-title mb-5 pb-10 font-semibold tracking-tight text-balance text-gray-900"
+        data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="1800" aria-live="polite">Features</h2>
     </div>
 
     <div class="max-w-6xl mx-auto text-gray-900">
       <div class="tabs tabs-lift w-full border-0">
         <!-- intro-->
-        <input type="radio" name="features_tabs" class="tab font-semibold text-xs sm:text-lg" aria-label="1" checked />
+        <input type="radio" name="features_tabs" class="tab font-semibold text-xs sm:text-lg" aria-label="1"
+          data-title="Features" checked />
         <div class="tab-content border-base-300 shadow-[0px_0px_15px_rgba(0,0,0,0.09)] bg-base-100/50 p-6 sm:p-10">
           <p class="text-lg sm:text-xl leading-relaxed">
-            <strong class="text-purple-500">ShiftMate</strong> is the smart shift and availability
-            planner designed to help you streamline scheduling, improve team
-            efficiency, and avoid conflicts. With a simple, user-friendly
-            interface, you can manage your workforce in real time and make
-            adjustments on the fly. ShiftMate is completely web-based, so it works in any modern browser on
-            Mac, Windows, Chromebook, iOS and Android. We also offer free
-            companion apps for iPhone/iPad and Android phones that support push
-            notifications, geo-fenced clock-ins and offline mode for spotty
-            connections.
+            <strong class="text-purple-500">ShiftMate</strong> brings rotas, availability, tasks and team
+            communication into one clear workspace shaped around the way your organisation already works.
+            Managers can coordinate people across hospital departments, café stations, retail floors, warehouses
+            or event crews without forcing every team into the same process. Custom roles, permissions and workflows
+            keep daily operations clear, while a simple dashboard gives everyone the information they need on any
+            modern device.
           </p>
         </div>
         <!-- advanced scheduling -->
-        <input type="radio" name="features_tabs" class="tab font-semibold text-base sm:text-lg" aria-label="2" />
+        <input type="radio" name="features_tabs" class="tab font-semibold text-base sm:text-lg" aria-label="2"
+          data-title="Advanced Scheduling Engine" />
         <div class="tab-content border-base-300 bg-base-100/50 p-6 sm:p-10">
           <p class="text-lg sm:text-xl leading-relaxed">
-            Our <strong class="text-purple-500">Advanced Scheduling Engine</strong> crunches historical staffing
-            data, predicted foot-traffic, and employee preferences to generate
-            the most efficient rota possible. Drag-and-drop changes ripple
-            through the calendar instantly, alerting only the people affected.
-            Managers can lock critical roles, set skill-based constraints, or
-            let the AI auto-fill hard-to-cover shifts. The result is fewer
-            gaps, reduced overtime, and happier staff all round. Say goodbye to
-            manual spreadsheets forever.
+            The <strong class="text-purple-500">Advanced Scheduling Engine</strong> balances availability, demand,
+            qualifications and role requirements when building each rota. Hospital managers can protect specialist
+            coverage, while hotels, shops and restaurants can plan around busy periods and seasonal teams.
+            Drag and drop changes update the schedule immediately, and managers can lock essential roles, control
+            overtime and fill difficult shifts with qualified people. The result is a practical rota that responds
+            to real staffing needs without relying on manual spreadsheets.
           </p>
         </div>
         <!-- team chat -->
-        <input type="radio" name="features_tabs" class="tab font-semibold text-base sm:text-lg" aria-label="3" />
+        <input type="radio" name="features_tabs" class="tab font-semibold text-base sm:text-lg" aria-label="3"
+          data-title="Team Chat" />
         <div class="tab-content border-base-300 bg-base-100/50 p-6 sm:p-10">
           <p class="text-lg sm:text-xl leading-relaxed">
             ShiftMate's built-in <strong class="text-purple-500">Team Chat</strong> keeps
-            conversations where the work happens. Each shift, role, or project
-            gets its own channel, so baristas aren’t flooded with kitchen
-            updates and vice-versa. Read receipts and emoji reactions keep
-            communication lightweight, while file sharing lets you drop SOPs
-            or menu updates right into the thread. Because the chat is tied to
-            the schedule, everyone always sees messages in their local time
-            zone—no more “What time is that for me?” confusion.
+            conversations connected to the right shift, location or team, so updates reach the people who actually
+            need them. Share a ward handover, a new menu note, a delivery change or an event briefing directly in
+            the relevant conversation. Read receipts, reactions and file sharing make communication quick without
+            losing important details. Because each message stays connected to the schedule, teams can find the right
+            context without searching through unrelated group chats.
           </p>
         </div>
 
         <!-- task manager -->
-        <input type="radio" name="features_tabs" class="tab font-semibold text-base sm:text-lg" aria-label="4" />
+        <input type="radio" name="features_tabs" class="tab font-semibold text-base sm:text-lg" aria-label="4"
+          data-title="Task Manager" />
         <div class="tab-content border-base-300 bg-base-100/50 p-6 sm:p-10">
           <p class="text-lg sm:text-xl leading-relaxed">
             The integrated <strong class="text-purple-500">Task Manager</strong> turns every shift into a
-            checklist of actionable items. Assign opening duties, compliance
-            checks, or closing chores to specific roles and watch completion
-            progress in real time. Automated reminders nudge staff if a task
-            is overdue, and recurring templates make weekly or monthly routines
-            effortless. Managers get a bird’s-eye dashboard, while employees
-            enjoy the satisfaction of ticking off each item.
+            practical checklist with clear ownership and deadlines. Assign safety checks in a hospital, opening
+            tasks in a café, stock checks in retail or time sensitive setup duties for an event. Recurring templates
+            make routine work easy to repeat, while reminders help staff complete urgent items on time. Managers can
+            follow progress as it happens and spot unfinished work before it affects the next team or shift.
           </p>
         </div>
         <!-- smart notifications -->
-        <input type="radio" name="features_tabs" class="tab font-semibold text-base sm:text-lg" aria-label="5" />
+        <input type="radio" name="features_tabs" class="tab font-semibold text-base sm:text-lg" aria-label="5"
+          data-title="Smart Notifications" />
         <div class="tab-content border-base-300 bg-base-100/50 p-6 sm:p-10">
           <p class="text-lg sm:text-xl leading-relaxed">
-            <strong class="text-purple-500">Smart Notifications</strong> ensure everyone receives the right
-            information at the perfect moment. Push alerts, SMS, or email can
-            be configured per user, reducing noise for veterans and adding
-            hand-holding for new hires. Geo-fenced reminders prompt clock-ins
-            when staff arrive on site, and one-tap shift swaps empower
-            employees to handle emergencies without manager intervention—
-            creating a seamless, stress-free scheduling ecosystem.
+            <strong class="text-purple-500">Smart Notifications</strong> alert the right people when a rota,
+            task or shift request changes. Each organisation can decide which updates are essential, which roles
+            should receive them and whether they arrive by push notification, SMS or email. Staff can respond to
+            shift offers and swap requests quickly, while managers stay informed about changes that need approval.
+            This keeps urgent information visible without filling every person's day with unnecessary alerts.
           </p>
         </div>
       </div>
@@ -274,7 +277,7 @@
 
   <!-- bento grid -->
   <section id="about" class="py-24 sm:py-20">
-    <div class="relative isolate mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <div class="relative isolate mx-auto max-w-2xl px-6 md:max-w-7xl md:px-8">
       <!-- gradient background -->
       <div class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl" aria-hidden="true">
         <div class="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#bd6f8f] to-[#9089fc] opacity-30"
@@ -288,101 +291,114 @@
       </div>
       <!-- heading -->
       <div class="mx-auto max-w-2xl text-center">
-        <h2 class="mb-5 pb-10 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
-          Everything you need </h2>
+        <h2 class="section-title mb-5 pb-10 font-semibold tracking-tight text-balance text-gray-900">
+          Built for every kind of shift team </h2>
       </div>
       <!-- grid -->
-      <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+      <div class="mt-10 grid gap-4 sm:mt-16 md:grid-cols-3 md:grid-rows-2">
         <!-- card 1 -->
-        <div class="relative lg:row-span-2" data-aos="fade-up-right" data-aos-easing="ease-out-cubic"
+        <div class="relative md:row-span-2" data-aos="fade-up-right" data-aos-easing="ease-out-cubic"
           data-aos-duration="2000">
-          <div class="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
+          <div class="absolute inset-px rounded-lg bg-white md:rounded-l-[2rem]"></div>
           <div
-            class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+            class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] md:rounded-l-[calc(2rem+1px)]">
             <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-              <p class="text-3xl font-bold tracking-tight text-purple-500 max-lg:text-center">
-                Mobile-first design
+              <p class="text-3xl font-bold tracking-tight text-purple-500 max-md:text-center">
+                Work from anywhere
               </p>
-              <p class="mt-4 text-gray-600 max-lg:text-center text-sm md:text-lg">
-                Clock-in, swap shifts and chat with teammates on the go.
-                ShiftMate’s iOS & Android apps mirror the full web experience.
+              <p class="mt-4 text-gray-600 max-md:text-center text-sm md:text-lg">
+                Check the rota, swap a shift and complete tasks from any device.
+                Teams stay connected on the ward, shop floor, event site or morning commute.
               </p>
             </div>
-            <div class="@container relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
-              <img class="size-full object-cover object-top" src="./public/images/shift_mockup_mobile.png" alt="">
+            <div class="@container relative min-h-[30rem] w-full grow max-md:mx-auto max-md:max-w-sm">
+              <img class="size-full object-cover object-top" src="./public/images/shift_mockup.png" alt="">
             </div>
           </div>
           <div
-            class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 lg:rounded-l-[2rem]">
+            class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 md:rounded-l-[2rem]">
           </div>
         </div>
         <!-- card 2 -->
-        <div class="relative max-lg:row-start-1" data-aos="flip-up" data-aos-easing="ease-out-cubic"
+        <div class="relative max-md:row-start-1" data-aos="flip-up" data-aos-easing="ease-out-cubic"
           data-aos-duration="2000">
-          <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
+          <div class="absolute inset-px rounded-lg bg-white max-md:rounded-t-[2rem]"></div>
           <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]
-                   max-lg:rounded-t-[calc(2rem+1px)]">
+                   max-md:rounded-t-[calc(2rem+1px)]">
             <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-              <p class="mt-2 text-3xl font-bold tracking-tight text-purple-500 max-lg:text-center">
-                Built for Shift Teams
+              <p class="mt-2 text-3xl font-bold tracking-tight text-purple-500 max-md:text-center">
+                Shaped around your organisation
               </p>
-              <p class="mt-2 pb-5 max-w-lg text-sm md:text-lg text-gray-600 max-lg:text-center">
-                Four essentials every ShiftMate user loves.<br>
-                Everything in one app. On all platforms and devices.
+              <p class="mt-2 pb-5 max-w-lg text-sm md:text-lg text-gray-600 max-md:text-center">
+                Custom roles, permissions, rules and dashboards support the way your teams actually operate.
               </p>
             </div>
-            <div class="flex flex-1 items-center justify-center px-8 max-lg:pt-5 pb-10 lg:pb-2
-            sm:px-10">
-              <div class="flex items-center justify-center space-x-6 text-3xl sm:text-4xl md:text-5xl text-black">
-                <i class="fas fa-clock" aria-label="Real-time Hours"></i>
-                <i class="fas fa-calendar-alt" aria-label="Smart Schedules"></i>
-                <i class="fas fa-sync-alt" aria-label="Easy Shift Swaps"></i>
-                <i class="fas fa-user-check" aria-label="Role-based Assignments"></i>
-              </div>
+            <div class="bento-icons flex flex-1 flex-wrap items-center justify-center gap-4 px-8 max-md:pt-5 pb-10 md:pb-2 sm:gap-5 sm:px-10">
+              <span class="bento-icon bento-icon--cyan" aria-label="Real-time Hours">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </span>
+              <span class="bento-icon bento-icon--violet" aria-label="Smart Schedules">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                </svg>
+              </span>
+              <span class="bento-icon bento-icon--pink" aria-label="Easy Shift Swaps">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                </svg>
+              </span>
+              <span class="bento-icon bento-icon--purple" aria-label="Role-based Assignments">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </span>
             </div>
           </div>
           <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5
-                   max-lg:rounded-t-[2rem]"></div>
+                   max-md:rounded-t-[2rem]"></div>
         </div>
         <!-- card 3 -->
-        <div class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2" data-aos="flip-down"
+        <div class="relative max-md:row-start-3 md:col-start-2 md:row-start-2" data-aos="flip-down"
           data-aos-easing="ease-out-cubic" data-aos-duration="2000">
           <div class="absolute inset-px rounded-lg bg-white"></div>
           <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-            <!-- <div class="px-8 pt-8 sm:px-10 sm:pt-10">
-              <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Watch friendly</p>
-              <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Morbi viverra dui mi arcu sed. Tellus
-                semper adipiscing suspendisse semper morbi.</p>
-            </div> -->
-            <div class="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
-              <img class="h-full object-cover" src="./public/images/watch_mockup.png" alt="">
+            <div class="@container flex flex-1 items-center max-md:py-6 md:pb-2">
+              <img class="h-full object-cover" src="./public/images/watch_mockup_2.png" alt="">
             </div>
           </div>
           <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5"></div>
         </div>
         <!-- card 4 -->
-        <div class="relative lg:row-span-2" data-aos="fade-up-left" data-aos-easing="ease-out-cubic"
+        <div class="relative md:row-span-2" data-aos="fade-up-left" data-aos-easing="ease-out-cubic"
           data-aos-duration="2000">
-          <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
+          <div class="absolute inset-px rounded-lg bg-white max-md:rounded-b-[2rem] md:rounded-r-[2rem]"></div>
           <div
-            class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-            <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-              <p class="text-3xl font-bold tracking-tight text-purple-500 max-lg:text-center">
-                Smart task manager
-              </p>
-              <p class="mt-4 text-gray-600 max-lg:text-center text-sm md:text-lg">
-                Opening checklists, closing duties and safety checks —
-                assign, track and tick-off every task directly within the schedule.
-              </p>
+            class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-md:rounded-b-[calc(2rem+1px)] md:rounded-r-[calc(2rem+1px)]">
+            <div class="@container relative min-h-[30rem] w-full grow">
+              <img class="size-full object-cover object-top" src="./public/images/task_mockup.png" alt="">
             </div>
-            <div class="@container relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
-
-              <img class="size-full object-cover object-top" src="./public/images/task_mockup_mobile.png" alt="">
-
+            <div class="px-8 pt-6 pb-8 sm:px-10 sm:pt-8 sm:pb-10">
+              <p class="text-3xl font-bold tracking-tight text-purple-500 max-md:text-center">
+                Tasks that match the shift
+              </p>
+              <p class="mt-4 text-gray-600 max-md:text-center text-sm md:text-lg">
+                Assign opening checklists, closing duties, safety checks and urgent handovers
+                directly within the schedule.
+              </p>
             </div>
           </div>
           <div
-            class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]">
+            class="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-md:rounded-b-[2rem] md:rounded-r-[2rem]">
           </div>
         </div>
       </div>
@@ -401,7 +417,7 @@
 ">
     <div class="mx-auto max-w-screen px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
-        <h2 class="mb-5 pb-10 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
+        <h2 class="section-title mb-5 pb-10 font-semibold tracking-tight text-balance text-gray-900">
           Trusted by</h2>
       </div>
       <div
@@ -439,26 +455,27 @@
     </div>
     <div class="mx-auto max-w-4xl text-center">
       <h2 class="text-base/7 font-semibold text-purple-500">Pricing</h2>
-      <p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">Choose the right
+      <p class="section-title mt-2 font-semibold tracking-tight text-balance text-gray-900">Choose the right
         plan
         for your team</p>
     </div>
     <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
       ShiftMate
-      offers flexible plans to meet the needs of your team. Whether you’re a small business or a large
-      enterprise, we have the right plan for you.</p>
+      offers a clear starting point for growing teams and a tailored setup for organisations
+      with more complex roles, rules and workflows.</p>
     <div
-      class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
+      class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 md:max-w-4xl md:grid-cols-2 md:gap-y-0">
       <!-- basic plan -->
       <div
-        class="rounded-3xl rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl "
+        class="rounded-3xl rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 md:mx-0 md:rounded-tr-none md:rounded-bl-3xl"
         data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
         <h3 id="tier-hobby" class="text-base/7 font-semibold text-purple-500">Basic</h3>
         <p class="mt-4 flex items-baseline gap-x-2">
           <span class="text-5xl font-semibold tracking-tight text-gray-900">$19</span>
           <span class="text-base text-gray-500">/month</span>
         </p>
-        <p class="mt-6 text-base/7 text-gray-600">For small teams or startups who need basic shift management.</p>
+        <p class="mt-6 text-base/7 text-gray-600">For smaller teams that need reliable scheduling and task management.
+        </p>
         <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-600 sm:mt-10">
           <li class="flex gap-x-3">
             <svg class="h-6 w-5 flex-none text-purple-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
@@ -502,14 +519,15 @@
           started today</a>
       </div>
       <!--  enterprise plan -->
-      <div class="relative rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10" data-aos="flip-left"
-        data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+      <div class="relative rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10 md:rounded-tl-none md:rounded-bl-none"
+        data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
         <h3 id="tier-enterprise" class="text-base/7 font-semibold text-purple-500">Enterprise</h3>
         <p class="mt-4 flex items-baseline gap-x-2">
           <span class="text-5xl font-semibold tracking-tight text-white">$49</span>
           <span class="text-base text-gray-400">/month</span>
         </p>
-        <p class="mt-6 text-base/7 text-gray-300">For larger teams needing advanced features and customization.</p>
+        <p class="mt-6 text-base/7 text-gray-300">For organisations that need tailored workflows, roles and dashboards.
+        </p>
         <ul role="list" class="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
           <li class="flex gap-x-3">
             <svg class="h-6 w-5 flex-none text-purple-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
@@ -577,7 +595,7 @@
   <section id="faq" class="flow-root">
 
     <div class=" px-3 md:px-20">
-      <p class="mx-auto mt-2 mb-2 text-center text-5xl font-semibold tracking-tight text-balance text-gray-950 sm:text-7xl"
+      <p class="section-title mx-auto mt-2 mb-2 text-center font-semibold tracking-tight text-balance text-gray-950"
         data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="1800">
         FAQ
       </p>
@@ -597,11 +615,8 @@
         </summary>
 
         <p class="pt-4 text-gray-900">
-          ShiftMate is completely web-based, so it works in any modern browser on
-          Mac, Windows, Chromebook, iOS and Android. We also offer free
-          companion apps for iPhone/iPad and Android phones that support push
-          notifications, geo-fenced clock-ins and offline mode for spotty
-          connections.
+          ShiftMate works in modern browsers on Mac, Windows, Chromebook, iOS and Android.
+          Mobile companion apps also support notifications, location-aware clock-ins and offline access.
         </p>
       </details>
 
@@ -621,12 +636,9 @@
         </summary>
 
         <p class="pt-4 text-gray-900">
-          The engine blends historical sales or foot-traffic data, employee
-          skills, availability, labour-law rules, and your own business
-          priorities. It runs thousands of simulations in a few seconds, then
-          produces the rota with the lowest predicted understaffing and overtime
-          cost. You can still tweak by hand—drag one shift and all downstream
-          conflicts are highlighted instantly.
+          The engine combines demand, employee skills, availability, labour rules and your organisation's
+          priorities. Managers can adjust the suggested rota at any time, and ShiftMate highlights conflicts
+          before changes are published.
         </p>
       </details>
 
@@ -646,11 +658,8 @@
         </summary>
 
         <p class="pt-4 text-gray-900">
-          Yes—if you allow it. ShiftMate’s “self-service swaps” let staff offer a
-          shift to qualified co-workers. The system checks role, skill and
-          maximum-hours rules automatically. You can require manager sign-off or
-          let approved swaps go live instantly. Either way, everyone involved
-          receives real-time notifications so nothing falls through the cracks.
+          Yes, if your workflow allows it. ShiftMate checks qualifications, roles and working-hour rules
+          before a swap is approved. Organisations can require manager sign-off or publish valid swaps automatically.
         </p>
       </details>
 
@@ -671,11 +680,8 @@
         </summary>
 
         <p class="pt-4 text-gray-900">
-          Absolutely. Messages are encrypted in transit and at rest, stored in EU
-          or US data centres that comply with ISO-27001 and SOC-2. You control
-          channel access by role or location, and chat history is searchable for
-          audit purposes. Unlike consumer apps, ShiftMate keeps personal phone
-          numbers private and respects each employee’s notification preferences.
+          ShiftMate keeps work conversations separate from personal messaging. Access can be organised by
+          role, department or location, while employees keep their personal phone numbers private.
         </p>
       </details>
 
@@ -695,10 +701,8 @@
         </summary>
 
         <p class="pt-4 text-gray-900">
-          Yes—out-of-the-box connectors exist for ADP, Gusto, Xero, Square POS,
-          Lightspeed and more. You can export hours in CSV, or use our REST API
-          and Zapier app to push data anywhere else. Time-clock events sync
-          every five minutes, cutting payroll prep from hours to minutes.
+          ShiftMate can connect with payroll, POS and other operational tools.
+          Teams can also export hours in CSV or use the API to fit scheduling data into an existing workflow.
         </p>
       </details>
 
@@ -718,11 +722,8 @@
         </summary>
 
         <p class="pt-4 text-gray-900">
-          Plans scale smoothly—when you add the sixth user to the Basic plan,
-          we’ll prompt you to upgrade to Growth. All data and settings stay
-          intact, and you only pay the pro-rated difference for the rest of the
-          billing cycle. Enterprise pricing is flat per active user, so you’re
-          never penalised for hiring seasonal staff.
+          Your roles, data and settings remain in place as the team grows. Larger organisations can move
+          to a tailored setup that supports more locations, departments, seasonal staff and custom workflows.
         </p>
       </details>
 
@@ -743,83 +744,53 @@
   <!-- footer -->
   <footer id="contact" class="bg-white" style="
       background-color:#ffffff00;
-      opacity:0.8;
       background-image:
       radial-gradient(#AD46FF 0.5px,transparent 0.5px),
       radial-gradient(#AD46FF 0.5px,#ffffff00 0.5px);
       background-size:20px 20px;
       background-position:0 0,10px 10px;">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="section-title font-semibold tracking-tight text-balance text-gray-900">
+          See ShiftMate built around your team
+        </h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
+          Share how your organisation works and we will prepare a personalised walkthrough focused on your roles,
+          rules and daily workflows.
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-        <!-- map and contact -->
-        <div class="order-2 lg:order-1 space-y-8
-                    pt-8 lg:border-t-0 mx-5">
-
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999781493418!2d2.2922926156745026!3d48.858373079287016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fef08d09b59%3A0xa23b3e26e5925ec8!2sEiffel%20Tower!5e0!3m2!1sen!2sfr!4v1712140000000"
-            allowfullscreen class="w-80 h-40 sm:h-50 rounded-xl shadow-md" data-aos="zoom-in"
-            data-aos-easing="ease-out-cubic" data-aos-duration="2000"></iframe>
-
-          <address class="not-italic space-y-2 text-gray-900">
-            <p class="text-xl font-semibold">ShiftMate&nbsp;HQ</p>
-            <p>5&nbsp;Avenue Anatole France<br>75007 Paris, France</p>
-
-            <p><strong>Email:</strong>
-              <a href="mailto:hello@shiftmate.com" class="text-purple-500 hover:underline">hello@shiftmate.com</a>
-            </p>
-
-            <p><strong>Phone:</strong>
-              <a href="tel:+33123456789"
-                class="text-purple-500 hover:underline">+33&nbsp;1&nbsp;23&nbsp;45&nbsp;67&nbsp;89</a>
-            </p>
-          </address>
-
-          <div class="flex space-x-6 text-2xl">
-            <a href="https://twitter.com" aria-label="Twitter" class="text-gray-600 hover:text-purple-500"><i
-                class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" aria-label="Instagram" class="text-gray-600 hover:text-purple-500"><i
-                class="fab fa-instagram"></i></a>
-            <a href="https://linkedin.com" aria-label="LinkedIn"
-              class="flex size-10 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition-colors hover:border-purple-200 hover:bg-purple-50 hover:text-purple-500"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://facebook.com" aria-label="Facebook" class="text-gray-600 hover:text-purple-500"><i
-                class="fab fa-facebook"></i></a>
-          </div>
-        </div>
-
-        <!-- demo -->
-        <div
-          class="order-1 lg:order-2 lg:border-l lg:border-gray-200 lg:pl-12 rounded-lg bg-white/60 p-8 lg:p-12 shadow-md mt-0 md:mt-10">
-
-          <h2 class="text-2xl font-medium text-gray-900" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000">Request a Demo</h2>
-
-          <p class="mt-4 text-gray-600 max-w-md">
-            See ShiftMate in action. Fill in your email and we’ll schedule a
-            personalised walk-through to show you how effortless scheduling can be.
+      <div id="demo" class="mt-14 grid gap-10 rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10
+                  md:grid-cols-2 md:items-center md:gap-12 sm:p-10 lg:p-14" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <div>
+          <p class="text-base/7 font-semibold text-purple-500">Request a Demo</p>
+          <h3 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            A closer look at the way your team works
+          </h3>
+          <p class="mt-5 max-w-xl text-base/7 text-gray-300 sm:text-lg/8">
+            We will show you how ShiftMate can support your scheduling, communication and task management without
+            forcing your organisation into a generic setup.
           </p>
-
-          <form class="mt-6">
-            <label for="demoEmail" class="sr-only">Email</label>
-            <div class="flex flex-col gap-3">
-              <input type="email" id="demoEmail" required placeholder="you@example.com" class="flex-grow rounded-md border border-gray-300 px-4 py-3
-                            focus:outline-none focus:ring-2 focus:ring-purple-400">
-              <button type="submit" class="rounded-md bg-purple-500 px-6 py-3 text-xs lg:text-xl text-white font-semibold
-                             hover:bg-purple-600 focus:outline-none focus:ring-2
-                             focus:ring-purple-400">
-                Book demo
-              </button>
-            </div>
-          </form>
         </div>
 
+        <form>
+          <label for="demoEmail" class="text-sm font-semibold text-white">Work email</label>
+          <div class="mt-3 flex flex-col gap-3">
+            <input type="email" id="demoEmail" required placeholder="you@example.com" class="w-full rounded-xl border border-white/15 bg-white px-4 py-3.5 text-gray-900 shadow-sm
+                     focus:outline-none focus:ring-2 focus:ring-purple-400">
+            <button type="submit" class="rounded-xl bg-purple-500 px-6 py-3.5 text-base font-semibold text-white shadow-sm
+                     transition-colors hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400
+                     focus:ring-offset-2 focus:ring-offset-gray-900">
+              Book a demo
+            </button>
+          </div>
+        </form>
       </div>
 
       <!-- copyright -->
       <p class="mt-12 border-t border-gray-200 pt-6 text-center text-sm text-gray-500">
-        &copy; 2025 Horizon. All rights reserved.
+        &copy; 2026 Horizon. All rights reserved.
       </p>
     </div>
   </footer>
@@ -846,12 +817,14 @@
     (function () {
       const toggleBtn = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
+      const siteHeader = document.getElementById('site-header');
       const hamburgerIcon = document.getElementById('hamburger-icon');
       const closeIcon = document.getElementById('close-icon');
 
       /** Syncs menu visibility with the hamburger/close icon state. */
       function setMenuOpen(isOpen) {
         mobileMenu.classList.toggle('hidden', !isOpen);
+        siteHeader.classList.toggle('rounded-b-none', isOpen);
         hamburgerIcon.classList.toggle('hidden', isOpen);
         closeIcon.classList.toggle('hidden', !isOpen);
         toggleBtn.setAttribute('aria-expanded', String(isOpen));
@@ -860,11 +833,24 @@
 
       toggleBtn.addEventListener('click', () => {
         const isHidden = mobileMenu.classList.contains('hidden');
-        setMenuOpen(isHidden); // ako je sakriven, otvori ga; ako je otvoren, zatvori ga
+        setMenuOpen(isHidden);
       });
 
       mobileMenu.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => setMenuOpen(false));
+      });
+    })();
+    // feature tab title
+    (function () {
+      const title = document.getElementById('features-tabs-title');
+      const tabs = document.querySelectorAll('input[name="features_tabs"]');
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('change', () => {
+          if (tab.checked) {
+            title.textContent = tab.dataset.title;
+          }
+        });
       });
     })();
   </script>
