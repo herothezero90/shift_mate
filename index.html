@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>ShiftMate</title>
   <link rel="icon" type="image/png" href="./public/images/time_management.svg">
-  <link href="./public/output.css?v=4" rel="stylesheet" />
+  <link href="./public/output.css?v=5" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <meta name="theme-color" content="#A9AEFE" media="(prefers-color-scheme: light)">
@@ -35,6 +35,8 @@
               class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">Features</a>
             <a href="#about"
               class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">About</a>
+            <a href="#testimonials"
+              class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">Testimonials</a>
             <a href="#pricing"
               class="px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors">Pricing</a>
             <a href="#faq"
@@ -64,6 +66,8 @@
           class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">Features</a>
         <a href="#about"
           class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">About</a>
+        <a href="#testimonials"
+          class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">Testimonials</a>
         <a href="#pricing"
           class="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 transition-colors">Pricing</a>
         <a href="#faq"
@@ -406,42 +410,167 @@
     </div>
   </section>
 
-  <!-- trusted by -->
-  <section class=" py-24 sm:py-20" style="
-  background-color: #ffffff00;
-   opacity: 1;
-   background-image: radial-gradient(#AD46FF 0.5px, transparent 0.5px), radial-gradient(#AD46FF 0.5px, #ffffff00
-   0.5px);
-   background-size: 20px 20px;
-   background-position: 0 0,10px 10px;
-">
+  <!-- trusted by testimonials -->
+  <section id="testimonials" class="testimonial-section py-24 sm:py-20">
     <div class="mx-auto max-w-screen px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
-        <h2 class="section-title mb-5 pb-10 font-semibold tracking-tight text-balance text-gray-900">
-          Trusted by</h2>
+        <h2 class="section-title mb-5 font-semibold tracking-tight text-balance text-gray-900" data-aos="zoom-in"
+          data-aos-easing="ease-out-cubic" data-aos-duration="1800">
+          Trusted by
+        </h2>
       </div>
-      <div
-        class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" data-aos="zoom-in"
-          data-aos-easing="ease-out-cubic" data-aos-duration="1200"
-          src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg" alt="Transistor"
-          width="158" height="48">
-        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" data-aos="zoom-in"
-          data-aos-easing="ease-out-cubic" data-aos-duration="1400"
-          src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform" width="158"
-          height="48">
-        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1" data-aos="zoom-in"
-          data-aos-easing="ease-out-cubic" data-aos-duration="1600"
-          src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple" width="158"
-          height="48">
-        <img class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1" data-aos="zoom-in"
-          data-aos-easing="ease-out-cubic" data-aos-duration="1800"
-          src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal"
-          width="158" height="48">
-        <img class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-          data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
-          src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic"
-          width="158" height="48">
+
+      <div class="logo-marquee mt-12" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1400"
+        aria-label="Companies using ShiftMate">
+        <div class="logo-marquee__track">
+          <div class="logo-marquee__group">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg"
+              alt="Transistor" width="158" height="48">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg" alt="Reform"
+              width="158" height="48">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg" alt="Tuple"
+              width="158" height="48">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg" alt="SavvyCal"
+              width="158" height="48">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg" alt="Statamic"
+              width="158" height="48">
+          </div>
+          <div class="logo-marquee__group" aria-hidden="true">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg" alt=""
+              width="158" height="48">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg" alt="" width="158"
+              height="48">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg" alt="" width="158"
+              height="48">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg" alt="" width="158"
+              height="48">
+            <img src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg" alt="" width="158"
+              height="48">
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-carousel mt-16" data-aos="fade-up" data-aos-easing="ease-out-cubic"
+        data-aos-duration="1800">
+        <div class="testimonial-track mx-auto max-w-7xl" data-testimonial-track tabindex="0"
+          aria-label="Customer testimonials. Use left and right arrow keys to browse.">
+          <article class="testimonial-card">
+              <div class="flex items-start justify-between gap-5">
+                <img class="testimonial-logo"
+                  src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg"
+                  alt="Transistor" width="158" height="48">
+                <div class="flex gap-1 text-purple-500" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span
+                    aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                </div>
+              </div>
+              <blockquote class="mt-8 flex-1 text-lg font-medium leading-8 text-gray-900">
+                “ShiftMate turned a complicated weekly rota into something our managers can update in minutes. The team
+                always knows what changed and why.”
+              </blockquote>
+              <div class="mt-8 border-t border-gray-200 pt-5">
+                <p class="font-semibold text-gray-900">Elena Brooks</p>
+                <p class="mt-1 text-sm leading-6 text-gray-500">Operations Director · Transistor</p>
+              </div>
+          </article>
+
+          <article class="testimonial-card">
+              <div class="flex items-start justify-between gap-5">
+                <img class="testimonial-logo"
+                  src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg"
+                  alt="Reform" width="158" height="48">
+                <div class="flex gap-1 text-purple-500" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span
+                    aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                </div>
+              </div>
+              <blockquote class="mt-8 flex-1 text-lg font-medium leading-8 text-gray-900">
+                “Our café teams swap shifts without the usual back-and-forth. Managers still have control, but nobody
+                needs to chase updates through group chats.”
+              </blockquote>
+              <div class="mt-8 border-t border-gray-200 pt-5">
+                <p class="font-semibold text-gray-900">Marcus Vale</p>
+                <p class="mt-1 text-sm leading-6 text-gray-500">People Lead · Reform</p>
+              </div>
+          </article>
+
+          <article class="testimonial-card">
+              <div class="flex items-start justify-between gap-5">
+                <img class="testimonial-logo"
+                  src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg"
+                  alt="Tuple" width="158" height="48">
+                <div class="flex gap-1 text-purple-500" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span
+                    aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                </div>
+              </div>
+              <blockquote class="mt-8 flex-1 text-lg font-medium leading-8 text-gray-900">
+                “We finally have one clear view across all locations. Availability, cover and opening tasks stay
+                connected, even during our busiest weekends.”
+              </blockquote>
+              <div class="mt-8 border-t border-gray-200 pt-5">
+                <p class="font-semibold text-gray-900">Priya Shah</p>
+                <p class="mt-1 text-sm leading-6 text-gray-500">Regional Manager · Tuple</p>
+              </div>
+          </article>
+
+          <article class="testimonial-card">
+              <div class="flex items-start justify-between gap-5">
+                <img class="testimonial-logo"
+                  src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg"
+                  alt="SavvyCal" width="158" height="48">
+                <div class="flex gap-1 text-purple-500" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span
+                    aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                </div>
+              </div>
+              <blockquote class="mt-8 flex-1 text-lg font-medium leading-8 text-gray-900">
+                “Every event has different roles and timings. ShiftMate gives us the flexibility to build each crew
+                properly and brief everyone before they arrive.”
+              </blockquote>
+              <div class="mt-8 border-t border-gray-200 pt-5">
+                <p class="font-semibold text-gray-900">Noah Bennett</p>
+                <p class="mt-1 text-sm leading-6 text-gray-500">Crew Coordinator · SavvyCal</p>
+              </div>
+          </article>
+
+          <article class="testimonial-card">
+              <div class="flex items-start justify-between gap-5">
+                <img class="testimonial-logo"
+                  src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg"
+                  alt="Statamic" width="158" height="48">
+                <div class="flex gap-1 text-purple-500" aria-label="5 out of 5 stars">
+                  <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span><span
+                    aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                </div>
+              </div>
+              <blockquote class="mt-8 flex-1 text-lg font-medium leading-8 text-gray-900">
+                “The live schedule has made handovers between reception, housekeeping and night staff much clearer.
+                Everyone starts the shift with the same information.”
+              </blockquote>
+              <div class="mt-8 border-t border-gray-200 pt-5">
+                <p class="font-semibold text-gray-900">Sofia Laurent</p>
+                <p class="mt-1 text-sm leading-6 text-gray-500">General Manager · Statamic</p>
+              </div>
+          </article>
+        </div>
+
+        <div class="testimonial-controls mt-8 flex items-center justify-center gap-3">
+          <button class="testimonial-control" type="button" data-testimonial-previous
+            aria-label="Show previous testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19 8 12l7-7" />
+            </svg>
+          </button>
+          <button class="testimonial-control" type="button" data-testimonial-next
+            aria-label="Show next testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -852,6 +981,112 @@
           }
         });
       });
+    })();
+    // testimonial carousel
+    (function () {
+      const carousel = document.getElementById('testimonials');
+      const track = carousel?.querySelector('[data-testimonial-track]');
+      const originalCards = track ? Array.from(track.querySelectorAll('.testimonial-card')) : [];
+      const previousButton = carousel?.querySelector('[data-testimonial-previous]');
+      const nextButton = carousel?.querySelector('[data-testimonial-next]');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let isVisible = false;
+      let autoplayDisabled = false;
+      let animationFrame;
+      let lastFrameTime;
+
+      if (!track || !previousButton || !nextButton || !originalCards.length) return;
+
+      function cloneCards() {
+        const before = originalCards.map((card) => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          return clone;
+        });
+        const after = originalCards.map((card) => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          return clone;
+        });
+
+        before.reverse().forEach((clone) => track.prepend(clone));
+        after.forEach((clone) => track.append(clone));
+      }
+
+      cloneCards();
+      const cards = Array.from(track.querySelectorAll('.testimonial-card'));
+
+      function cardPosition(index) {
+        return cards[index].offsetLeft - cards[0].offsetLeft;
+      }
+
+      function segmentWidth() {
+        return cardPosition(originalCards.length * 2) - cardPosition(originalCards.length);
+      }
+
+      function normalizeLoopPosition() {
+        const start = cardPosition(originalCards.length);
+        const end = cardPosition(originalCards.length * 2);
+        const width = segmentWidth();
+
+        if (track.scrollLeft <= start) {
+          track.scrollLeft += width;
+        } else if (track.scrollLeft >= end) {
+          track.scrollLeft -= width;
+        }
+      }
+
+      function closestCardIndex() {
+        return cards.reduce((closest, card, index) => {
+          const currentDistance = Math.abs(cardPosition(index) - track.scrollLeft);
+          const closestDistance = Math.abs(cardPosition(closest) - track.scrollLeft);
+          return currentDistance < closestDistance ? index : closest;
+        }, originalCards.length);
+      }
+
+      function animate(time) {
+        if (isVisible && !autoplayDisabled && !reducedMotion.matches) {
+          const elapsed = Math.min(time - (lastFrameTime || time), 32);
+          track.scrollLeft -= elapsed * 0.028;
+          normalizeLoopPosition();
+        }
+
+        lastFrameTime = time;
+        animationFrame = window.requestAnimationFrame(animate);
+      }
+
+      function stopAutoplay() {
+        autoplayDisabled = true;
+        carousel.classList.add('is-manual');
+      }
+
+      function navigate(direction) {
+        stopAutoplay();
+        const nextIndex = closestCardIndex() + direction;
+        track.scrollTo({ left: cardPosition(nextIndex), behavior: 'smooth' });
+      }
+
+      previousButton.addEventListener('click', () => navigate(-1));
+      nextButton.addEventListener('click', () => navigate(1));
+
+      track.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        navigate(event.key === 'ArrowRight' ? 1 : -1);
+      });
+
+      track.addEventListener('scroll', normalizeLoopPosition, { passive: true });
+      window.addEventListener('resize', normalizeLoopPosition);
+
+      const visibilityObserver = new IntersectionObserver(([entry]) => {
+        isVisible = entry.isIntersecting;
+      }, { threshold: 0.35 });
+
+      visibilityObserver.observe(carousel);
+      track.scrollLeft = cardPosition(originalCards.length * 2) - 1;
+      animationFrame = window.requestAnimationFrame(animate);
+
+      window.addEventListener('pagehide', () => window.cancelAnimationFrame(animationFrame), { once: true });
     })();
   </script>
 </body>
