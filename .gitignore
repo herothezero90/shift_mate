@@ -1,0 +1,6 @@
+# Local tooling already found in this repo
+.claude/
+
+# Dependencies and OS files
+node_modules/
+.DS_Store
